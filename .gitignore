@@ -1,32 +1,28 @@
-# Prerequisites
-*.d
+# ublic int i;
+public GameObject[] prefab;
+public GameObject field;
+public int abstand = 3;
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+// Use this for initialization
+void Start () {
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
 
-# Fortran module files
-*.mod
-*.smod
+	for (i = 0; i < 100; i++)
+	{
+		prefab[i] = Instantiate(field) as GameObject;
+		Instantiate(prefab[i], new Vector3(i * 2.0F, 0, 0), Quaternion.identity);
+		prefab[i].transform.localPosition = new Vector3(-200, 0, (i * abstand));
+		prefab[i].name = "Mais" + i;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+	}
 
-# Executables
-*.exe
-*.out
-*.app
+
+
+}
+
+// Update is called once per frame
+void Update () {
+
+}
+}
